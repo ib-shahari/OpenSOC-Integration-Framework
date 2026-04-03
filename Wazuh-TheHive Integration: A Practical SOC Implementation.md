@@ -36,7 +36,7 @@ This stage focuses on configuring OPNsense to forward relevant security logs to 
 **3.1.1. Configure Suricata IDS on OPNsense**
 
 To ensure a continuous stream of threat telemetry, Suricata IDS on OPNsense must be configured to enable Syslog alerts and EVE logging. This setup ensures that critical network intrusion events are captured and made available for forwarding.
-![[configure IDS 1.png]]
+![Configure IDS](images./configure-IDS.png)
 
 
 **3.1.2. Configure Wazuh Manager for Suricata EVE.JSON Ingestion**
@@ -52,13 +52,12 @@ The Wazuh Manager's ossec.conf file needs to be updated to ingest JSON logs from
 
 A Wazuh Agent must be installed and configured on OPNsense to establish a secure connection with the Wazuh Manager via TCP on port 1514. This ensures the reliable transmission of system logs and Intrusion Detection System (IDS) events from OPNsense to Wazuh.
 
-![Configure Wazuh Agent](images/configure-wazuhagent.png)
+![Configure Wazuh Agent](images./configure-wazuh-agent.png)
 
 **3.1.4. Add Custom Decoder for OPNsense on Wazuh Server**
 
 To effectively parse OPNsense firewall logs, a custom decoder is required on the Wazuh Manager. This decoder utilizes Regular Expressions (Regex) to extract critical fields such as source IP (srcip), destination IP (dstip), and protocol from raw firewall logs, facilitating accurate analysis.
-![adding a new decoder for opnsense](images/wazuh stage2-decoder 1.png)
-![[wazuh stage2-decoder 1.png]]
+![OPNsense Decoder](images./opnsense-decoder.png)
 
 **3.1.5. Implement Custom Rules for OPNsense on Wazuh Server**
 
@@ -83,8 +82,11 @@ sudo systemctl restart filebeat
 sudo filebeat test output
 
 After implementing these steps, Suricata alerts began flowing correctly alongside the firewall logs, resolving the data loss issue.
-![[OPNsense-dashboard 1.png]]
-![[2opnseense wazuh intigeartion 1.png]]
+
+![OPNsense Dashboard](images./OPNsense-dashboard.png)
+
+![OPNsense Wazuh Integration](images./opnseense-wazuh-intigeartion.png)
+
 **3.3. Stage 2: Integratet Wazuh and TheHive**
 
 This stage outlines the process of integrating Wazuh with TheHive to enable automated incident creation and management.
@@ -92,7 +94,8 @@ This stage outlines the process of integrating Wazuh with TheHive to enable auto
 **3.3.1. TheHive User and API Key Generation**
 
 The integration begins by creating a new user in TheHive with an Analyst role. Subsequently, an API Key is generated for this user. This API key serves as the secure credential for Wazuh to programmatically forward alerts and create cases within TheHive.
-![[api key 1.png]]
+
+![API Key](images./api-key.png)
 
 **3.3.2. Install thehive4py Library on Wazuh Manager**
 
@@ -136,10 +139,12 @@ To validate the end-to-end integration, a SYN Stealth Scan (nmap -sS ) is perfor
 
 nmap -sS <OPNsense_WAN_IP>
 
-![[suricata alert 1.png]]
-![[wazuh alert-01 1.jpeg]]
+![Suricata Alert](images./suricata-alert.png)
 
-![[thehive alert2-01 1.jpeg]]
+![Wazuh Alert](images./wazuh-alert.jpeg)
+
+![TheHive Alert](images./thehive-alert.jpeg)
+
 ### 4.1. Validation Results
 
 The results demonstrate a successful end-to-end integration between OPNsense, Wazuh, and TheHive. Following the Nmap scan simulation, the alert lifecycle was validated as follows:
