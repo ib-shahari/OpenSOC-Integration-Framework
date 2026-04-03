@@ -1,0 +1,12 @@
+<decoder name="opnsense-custom">
+ <prematch>filterlog</prematch>
+</decoder>
+<decoder name="opnsense-fields">
+ <parent>opnsense-custom</parent>
+
+<regex>^\s+,\s+,\s+,\s+,\s+,\s+,\s+,\s+,\s+,\s+,\s+,\s+,\s+,\s+,\s+
+,\s+,\s+</regex>
+
+<order>logsource,id,action,protocol,srcip,dstip,sreport,dstport</or
+der>
+</decoder>
