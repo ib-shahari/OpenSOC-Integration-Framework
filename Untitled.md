@@ -51,7 +51,9 @@ The Wazuh Manager's ossec.conf file needs to be updated to ingest JSON logs from
 **3.1.3. Configure Wazuh Agent on OPNsense**
 
 A Wazuh Agent must be installed and configured on OPNsense to establish a secure connection with the Wazuh Manager via TCP on port 1514. This ensures the reliable transmission of system logs and Intrusion Detection System (IDS) events from OPNsense to Wazuh.
-!Configure wazuh agent](images/filebeat_config.png)
+
+![Configure Wazuh Agent](images/configure-wazuhagent.png)
+
 **3.1.4. Add Custom Decoder for OPNsense on Wazuh Server**
 
 To effectively parse OPNsense firewall logs, a custom decoder is required on the Wazuh Manager. This decoder utilizes Regular Expressions (Regex) to extract critical fields such as source IP (srcip), destination IP (dstip), and protocol from raw firewall logs, facilitating accurate analysis.
