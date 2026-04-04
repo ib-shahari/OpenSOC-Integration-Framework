@@ -18,6 +18,6 @@
 - ​**TheHive Platform**: Minimum 5GB RAM.
 - ​**OPNsense Firewall**: Minimum 2GB RAM.
 
-​**Prepared by:** Ibrahim Al-Shahari & Research Team
+​**Prepared by:** Ibrahim Al-Shahari
 
-**Affiliation:** Al-Qalam University - Faculty of Engineering & IT (2025/2026)
+د
