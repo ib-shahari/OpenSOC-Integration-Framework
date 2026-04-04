@@ -157,8 +157,8 @@ The results demonstrate a successful end-to-end integration between OPNsense, Wa
 
 This project successfully established a functional and automated SOC data pipeline by integrating OPNsense, Wazuh, and TheHive. The documented process, from log forwarding and custom rule creation to troubleshooting and system verification, provides a comprehensive guide for deploying a similar open-source security solution. This integration significantly enhances threat detection capabilities and streamlines incident response workflows, contributing to a more robust cybersecurity posture.
 
-References
+## References
 
 [1] OPNsense Documentation:
 [2] Wazuh Documentation:
-[4] Suricata Documentation:
+[3] Suricata Documentation:
