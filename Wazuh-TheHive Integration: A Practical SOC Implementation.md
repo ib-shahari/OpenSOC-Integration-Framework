@@ -47,7 +47,7 @@ The Wazuh Manager's ossec.conf file needs to be updated to ingest JSON logs from
 ```
 <localfile>
     <log_format>json</log_format>
-<location>/var/log/suricata/eve.json</location>
+    <location>/var/log/suricata/eve.json</location>
 </localfile>
 ```
 
