@@ -1,5 +1,5 @@
 #!/var/ossec/framework/python/bin/python3
-
+```python
 import sys
 import json
 import requests
@@ -49,3 +49,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+````
