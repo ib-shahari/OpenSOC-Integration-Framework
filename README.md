@@ -8,7 +8,7 @@
 - ​**thehive4py**: A Bash wrapper script used to execute the Python integration within the Wazuh framework environment.
 - ​**opnsense-decoder.xml**: A custom XML decoder designed to parse and structure raw OPNsense firewall logs within Wazuh.
 - ​**opnsense-rules.xml**: Security rules tailored to identify threats and anomalies specifically within OPNsense traffic.
-- ​**images./**: A dedicated folder containing architectural diagrams, dashboard screenshots, and implementation results.
+- ​**images./**: A dedicated folder containing implementation results.
 
 ### ​Minimum System Requirements
 
